@@ -6,7 +6,7 @@ html {
   font-family: "Rubik", sans-serif;
 }
 body {
-  /*background: bg-white-500*/
+  background: bg-white-500
 }
 p {
   color:  #000000
@@ -16,7 +16,7 @@ p {
   content: "";
   height: 2px;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  /*@apply w-0 bg-green-main left-1/2 block bottom-0 absolute;*/
+  @apply w-0 bg-green-main left-1/2 block bottom-0 absolute;
 }
 .animation-active:after {
   @apply left-0 w-full;
