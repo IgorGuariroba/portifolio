@@ -10,7 +10,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import Image from "next/image";
-import aiImage from "../../../assets/ai-image.png";
+import aiImage from "@/public/assets/ai-image.png";
 
 function variants() {
   return {
@@ -71,8 +71,6 @@ interface DataType {
 }
 
 export default function ClientHomeView(data: DataType[]) {
-  console.log(data, "ClientHomeView");
-
   const setVariants = useMemo(() => variants(), []);
   const containerRef = useRef(null);
 
@@ -141,6 +139,7 @@ export default function ClientHomeView(data: DataType[]) {
                 height={300}
                 width={300}
                 className="absolute top-[-15px]"
+                style={{position: 'absolute', left: '45%', transform: 'translateX(-50%)'}}
               />
             </motion.div>
           </motion.div>

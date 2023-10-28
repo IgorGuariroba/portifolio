@@ -1,8 +1,9 @@
-import ClientHomeView from "@/NextJS-Fullstack-Portfolio-2023/src/components/client-view/home";
 // import ClientAboutView from "@/NextJS-Fullstack-Portfolio-2023/src/components/client-view/about";
 // import ClientExperienceAndEducationView from "@/NextJS-Fullstack-Portfolio-2023/src/components/client-view/experience";
 // import ClientProjectView from "@/NextJS-Fullstack-Portfolio-2023/src/components/client-view/project";
 // import ClientContactView from "@/NextJS-Fullstack-Portfolio-2023/src/components/client-view/contact";
+
+import ClientHomeView from "@/components/client-view/home";
 
 interface PropsDatas {
     currentSection: string
