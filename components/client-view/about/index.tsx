@@ -4,7 +4,7 @@ import {useMemo} from "react";
 import AnimationWrapper from "../animation-wrapper";
 import {motion} from "framer-motion";
 import Image from "next/image";
-import aboutMeImage from "../../../assets/about-image.png";
+import aboutMeImage from "@/public/assets/about-image.png";
 
 function variants() {
     return {
@@ -39,7 +39,10 @@ interface PropsAbout {
     skills: String,
 }
 
-export default function ClientAboutView(data: PropsAbout) {
+interface PropsData {
+    data: PropsAbout
+}
+export default function ClientAboutView({data}: PropsData) {
 
     const setVariants = useMemo(() => variants(), []);
 
@@ -126,7 +129,7 @@ export default function ClientAboutView(data: PropsAbout) {
                         variants={setVariants}
                         className="grid gap-4 grid-cols-3 h-full max-h-[200px] w-full"
                     >
-                        {data?.skills.split(",").map((skill) => (
+                        {data?.skills && data.skills.split(",").map((skill) => (
                             <motion.div
                                 className="w-full flex justify-center items-center"
                                 variants={skillItemVariant}

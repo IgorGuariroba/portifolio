@@ -69,8 +69,11 @@ interface DataType {
   heading?: string;
   summary?: string;
 }
+interface ClientHomeViewProps {
+  data: DataType[];
+}
 
-export default function ClientHomeView(data: DataType[]) {
+export default function ClientHomeView({data}: ClientHomeViewProps) {
   const setVariants = useMemo(() => variants(), []);
   const containerRef = useRef(null);
 
