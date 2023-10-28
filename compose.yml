@@ -1,0 +1,21 @@
+version: '3'
+services:
+  portifolio:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "${PORT_APP}:${PORT_APP}"
+  postgres:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: ${BD_USER}
+      POSTGRES_PASSWORD: ${BD_PASSWORD}
+      POSTGRES_DB: ${BD_DATA}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "${BD_PORT}:${BD_PORT}"
+
+volumes:
+  postgres_data:
