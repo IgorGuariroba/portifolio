@@ -10,23 +10,29 @@ const menuItems = [
   },
   {
     id: "about",
-    label: "About",
+    label: "Sobre",
   },
   {
     id: "experience",
-    label: "Experience",
+    label: "Experiência",
   },
   {
     id: "project",
-    label: "projects",
+    label: "Projetos",
   },
   {
     id: "contact",
-    label: "Contact",
+    label: "Contatos",
   },
 ];
 
-function CreateMenus({ activeLink, getMenuItems, setActiveLink }) {
+type CreateMenusProps = {
+  activeLink: string;
+  getMenuItems: { id: string; label: string }[];
+  setActiveLink: (id: string) => void;
+};
+
+function CreateMenus({ activeLink, getMenuItems, setActiveLink }: CreateMenusProps) {
   return getMenuItems.map((item) => (
     <LinkScroll
       activeClass="active"
@@ -92,7 +98,7 @@ export default function Navbar() {
               }
               className="py-3 px-6 border-[2px] bg-[#fff] border-green-main text-[#000] font-semibold rounded-lg text-xl tracking-widest hover:shadow-green-md transition-all outline-none"
             >
-              Contact Me
+              Fale Comigo
             </button>
           </div>
         </nav>

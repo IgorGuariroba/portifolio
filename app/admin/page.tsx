@@ -7,7 +7,7 @@ import AdminExperienceView from "@/components/admin-view/experience";
 import AdminHomeView from "@/components/admin-view/home";
 import Login from "@/components/admin-view/login";
 import AdminProjectView from "@/components/admin-view/project";
-import { addData, getData, login, updateData } from "@/services";
+import { addData, getData, login, updateData } from "@/app/services";
 import { useEffect, useState } from "react";
 
 const initialHomeFormData = {
@@ -48,6 +48,17 @@ const initialLoginFormData = {
   username: "",
   password: "",
 };
+
+type SetFormData = React.Dispatch<React.SetStateAction<{username: string; password: string}>>
+
+const LoginForm: React.FC<LoginProps> = ({ formData, handleLogin, setFormData }) => {
+  //...
+}
+interface LoginProps {
+  formData: { username: string; password: string }
+  handleLogin: () => void
+  setFormData: SetFormData
+}
 
 export default function AdminView() {
   const [currentSelectedTab, setCurrentSelectedTab] = useState("home");
