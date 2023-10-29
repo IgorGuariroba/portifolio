@@ -1,13 +1,13 @@
 import { compare, hash } from "bcryptjs";
 import { NextResponse } from "next/server";
 import prismadb from "@/lib/prismadb";
-import {NextApiRequest} from "next";
+import {NextRequest} from "next/server";
 
 export const dynamic = "force-dynamic";
 
-export async function POST(req: NextApiRequest) {
+export async function POST(req: NextRequest) {
   try {
-    const { username, password }: {username: string, password: string} = await req.body;
+    const { username, password }: {username: string, password: string} = await req.json();
 
     const checkUser = await prismadb.user.findUnique({
       where: { username: username },
@@ -23,10 +23,10 @@ export async function POST(req: NextApiRequest) {
     const hashPassword = await hash(checkUser.password, 12);
     const checkPassword = await compare(password, hashPassword);
 
-    if (!checkPassword) {
+    if (!checkPassword || !checkUser) {
       return NextResponse.json({
         success: false,
-        message: "Wrong password. Please try again",
+        message: "Usuário ou senha incorreto tente novamente!",
       });
     }
     return NextResponse.json({
@@ -34,7 +34,7 @@ export async function POST(req: NextApiRequest) {
       message: "Login successfull",
     });
   } catch (e) {
-    console.log(e);
+    console.log('Erro desconhecido',e);
 
     return NextResponse.json({
       success: false,

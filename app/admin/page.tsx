@@ -49,30 +49,19 @@ const initialLoginFormData = {
   password: "",
 };
 
-type SetFormData = React.Dispatch<React.SetStateAction<{username: string; password: string}>>
-
-const LoginForm: React.FC<LoginProps> = ({ formData, handleLogin, setFormData }) => {
-  //...
-}
-interface LoginProps {
-  formData: { username: string; password: string }
-  handleLogin: () => void
-  setFormData: SetFormData
-}
-
 export default function AdminView() {
   const [currentSelectedTab, setCurrentSelectedTab] = useState("home");
   const [homeViewFormData, setHomeViewFormData] = useState(initialHomeFormData);
   const [aboutViewFormData, setAboutViewFormData] =
     useState(initialAboutFormData);
   const [experienceViewFormData, setExperienceViewFormData] = useState(
-    initialExperienceFormData
+      initialExperienceFormData
   );
   const [educationViewFormData, setEducationViewFormData] = useState(
-    initialEducationFormData
+      initialEducationFormData
   );
   const [projectViewFormData, setProjectViewFormData] = useState(
-    initialProjectFormData
+      initialProjectFormData
   );
 
 
@@ -148,7 +137,6 @@ export default function AdminView() {
       />,
     },
   ];
-
 
   async function extractAllDatas() {
     const response = await getData(currentSelectedTab);

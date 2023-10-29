@@ -17,13 +17,7 @@ const controls = [
   },
 ];
 
-type LoginProps = {
-  formData: { [key: string]: string }, // ou qualquer estrutura de objeto
-  setFormData: (formData: { [key: string]: string }) => void,  // ou o tipo adequado de função
-  handleLogin: () => void
-}
-
-export default function Login({ formData, setFormData, handleLogin }: LoginProps) {
+export default function Login({ formData, setFormData, handleLogin }) {
     return (
         <>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
