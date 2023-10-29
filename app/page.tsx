@@ -2,6 +2,7 @@ import ClientHomeView from "@/components/client-view/home";
 import ClientAboutView from "@/components/client-view/about";
 import ClientExperienceAndEducationView from "@/components/client-view/experience";
 import ClientProjectView from "@/components/client-view/project";
+import ClientContactView from "@/components/client-view/contact";
 
 interface PropsDatas {
     currentSection: string
@@ -37,7 +38,7 @@ export default async function Home() {
                 experienceData={experienceSectionData}
             />
             <ClientProjectView data={projectSectionData}/>
-            {/*<ClientContactView/>*/}
+            <ClientContactView/>
         </div>
     )
 }

@@ -7,21 +7,21 @@ import {addData} from "@/app/services";
 const controls = [
     {
         name: "name",
-        placeholder: "Enter your name",
+        placeholder: "Diga seu nome",
         type: "text",
-        label: "Name",
+        label: "Nome",
     },
     {
         name: "email",
-        placeholder: "Enter your email",
+        placeholder: "Informe envie um email",
         type: "email",
         label: "Email",
     },
     {
         name: "message",
-        placeholder: "Enter your message",
+        placeholder: "Digite sua mensagem",
         type: "text",
-        label: "Message",
+        label: "Mensagem",
     },
 ];
 
@@ -83,7 +83,7 @@ export default function ClientContactView() {
             <AnimationWrapper className={"py-6"}>
                 <div className="flex flex-col justify-center items-center row-start-2 sm:row-start-1">
                     <h1 className="leading-[70px] mb-4 text-3xl lg:text-4xl xl:text-5xl font-medium">
-                        {"Contact Me".split(" ").map((item, index) => (
+                        {"Entre em Contato".split(" ").map((item, index) => (
                             <span
                                 className={`${index === 1 ? "text-green-main" : "text-[#000]"}`}
                             >
@@ -142,7 +142,7 @@ export default function ClientContactView() {
                             )}
                             {
                                 showSuccessMessage &&
-                                <p className="text-[14px] font-bold my-[8px]">Your message is successfully delivered
+                                <p className="text-[14px] font-bold my-[8px]">Mensagem enviada com Sucesso!
                                     !</p>
                             }
                             <div className="p-2 w-full">
@@ -151,7 +151,7 @@ export default function ClientContactView() {
                                     onClick={handleSendMessage}
                                     className="disabled:opacity-50 py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg text-2xl tracking-widest bg-green-main outline-none"
                                 >
-                                    Send Message
+                                    Enviar Mensagem
                                 </button>
                             </div>
                         </div>
