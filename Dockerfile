@@ -16,6 +16,10 @@ COPY --chown=node:node . .
 # Install dependencies
 RUN npm install
 
+# Generate Prisma Client
+RUN npx prisma generate
+
+
 # Comando para executar a aplicação
 CMD ["npm", "run", "dev"]
 # Command to keep the container running
