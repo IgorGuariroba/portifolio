@@ -136,7 +136,7 @@ export default function ClientHomeView({data}: ClientHomeViewProps) {
               <div className="w-[400px] h-[400px] top-[40px] left-[-30px] rounded-lg border-[6px] border-[#000000] absolute"></div>
               <Image
                 src={aiImage}
-                alt="Profile Picture"
+                alt="Foto Profissional"
                 layout="responsive"
                 quality={100}
                 height={300}

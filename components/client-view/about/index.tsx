@@ -48,20 +48,20 @@ export default function ClientAboutView({data}: PropsData) {
 
     const aboutDataInfo = [
         {
-            label: "Client",
+            label: "Clientes",
             value: data?.noofclients || "0",
         },
         {
-            label: "Projects",
+            label: "Projetos",
             value: data?.noofprojects || "0",
         },
         {
-            label: "Experience",
+            label: "Experiências",
             value: data?.yearofexperience || "0",
         },
     ];
 
-    const headingText = "Why Hire Me For Your Next Project ?";
+    const headingText = "Por que me contratar para o seu próximo projeto?";
 
     return (
         <div className="max-w-screen-xl mt-24 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto" id="about">
@@ -116,7 +116,7 @@ export default function ClientAboutView({data}: PropsData) {
                     <motion.div variants={setVariants} className="h-full w-full p-4">
                         <Image
                             src={aboutMeImage}
-                            alt="About Me"
+                            alt="Sobre mim"
                             layout="responsive"
                             height={414}
                             width={508}

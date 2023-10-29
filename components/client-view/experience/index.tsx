@@ -11,12 +11,27 @@ import {
 import AnimationWrapper from "../animation-wrapper";
 import { motion } from "framer-motion";
 
-export default function ClientExperienceAndEducationView({
-  educationData,
-  experienceData,
-}) {
-  console.log(educationData, experienceData, "experienceData");
 
+interface EducationDataItem {
+  year: number;
+  college: string;
+  degree: string;
+}
+
+interface ExperienceDataItem {
+  company: string;
+  duration: string;
+  jobprofile: string;
+  location: string;
+  position: string;
+}
+
+interface ClientExperienceAndEducationViewProps {
+  educationData: EducationDataItem[];
+  experienceData: ExperienceDataItem[];
+}
+
+export default function ClientExperienceAndEducationView({educationData,experienceData}: ClientExperienceAndEducationViewProps) {
   return (
     <div
       className="max-w-screen-xl mt-24 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto"
@@ -27,7 +42,7 @@ export default function ClientExperienceAndEducationView({
           <AnimationWrapper className={"py-6 sm:py-16"}>
             <div className="flex flex-col justify-center items-center row-start-2 sm:row-start-1">
               <h1 className="leading-[70px] mb-4 text-3xl lg:text-4xl xl:text-5xl font-medium">
-                {"My Experince".split(" ").map((item, index) => (
+                {"Minha Experiência".split(" ").map((item, index) => (
                   <span
                     className={`${
                       index === 1 ? "text-green-main" : "text-[#000]"
@@ -79,7 +94,7 @@ export default function ClientExperienceAndEducationView({
           <AnimationWrapper className={"py-6 sm:py-16"}>
             <div className="flex flex-col justify-center items-center row-start-2 sm:row-start-1">
               <h1 className="leading-[70px] mb-4 text-3xl lg:text-4xl xl:text-5xl font-medium">
-                {"My Education".split(" ").map((item, index) => (
+                {"Minha Formação".split(" ").map((item, index) => (
                   <span
                     className={`${
                       index === 1 ? "text-green-main" : "text-[#000]"

@@ -1,13 +1,11 @@
-import connectToDB from "@/database";
-import Experience from "@/models/Experience";
 import { NextResponse } from "next/server";
+import prismadb from "@/lib/prismadb";
 
 export const dynamic = "force-dynamic";
 
-export async function GET(req) {
+export async function GET() {
   try {
-    await connectToDB();
-    const extractData = await Experience.find({});
+    const extractData = await prismadb.education.findMany();
 
     if (extractData) {
       return NextResponse.json({

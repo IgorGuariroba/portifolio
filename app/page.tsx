@@ -1,5 +1,7 @@
 import ClientHomeView from "@/components/client-view/home";
 import ClientAboutView from "@/components/client-view/about";
+import ClientExperienceAndEducationView from "@/components/client-view/experience";
+import ClientProjectView from "@/components/client-view/project";
 
 interface PropsDatas {
     currentSection: string
@@ -19,9 +21,9 @@ async function extractAllDatas({currentSection}: PropsDatas) {
 export default async function Home() {
     const homeSectionData = await extractAllDatas({currentSection: "home"});
     const aboutSectionData = await extractAllDatas({currentSection: "about"});
-    // const experienceSectionData = await extractAllDatas({currentSection: "experience"});
-    // const educationSectionData = await extractAllDatas({currentSection: "education"});
-    // const projectSectionData = await extractAllDatas({currentSection: "project"});
+    const experienceSectionData = await extractAllDatas({currentSection: "experience"});
+    const educationSectionData = await extractAllDatas({currentSection: "education"});
+    const projectSectionData = await extractAllDatas({currentSection: "project"});
     return (
         <div>
             <ClientHomeView data={homeSectionData}/>
@@ -30,11 +32,11 @@ export default async function Home() {
                     aboutSectionData && aboutSectionData.length ? aboutSectionData[0] : []
                 }
             />
-            {/*<ClientExperienceAndEducationView*/}
-            {/*    educationData={educationSectionData}*/}
-            {/*    experienceData={experienceSectionData}*/}
-            {/*/>*/}
-            {/*<ClientProjectView data={projectSectionData}/>*/}
+            <ClientExperienceAndEducationView
+                educationData={educationSectionData}
+                experienceData={experienceSectionData}
+            />
+            <ClientProjectView data={projectSectionData}/>
             {/*<ClientContactView/>*/}
         </div>
     )
