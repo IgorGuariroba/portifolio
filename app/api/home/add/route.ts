@@ -1,14 +1,12 @@
-import connectToDB from "@/database";
-import Contact from "@/models/Contact";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
+import prismadb from "@/lib/prismadb";
 
 export const dynamic = "force-dynamic";
 
-export async function POST(req) {
+export async function POST(req: NextRequest) {
   try {
-    await connectToDB();
     const extractData = await req.json();
-    const saveData = await Contact.create(extractData);
+    const saveData = await prismadb.home.create(extractData);
 
     if (saveData) {
       return NextResponse.json({
