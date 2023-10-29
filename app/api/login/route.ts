@@ -1,16 +1,17 @@
-import connectToDB from "@/database";
-import User from "@/models/User";
 import { compare, hash } from "bcryptjs";
 import { NextResponse } from "next/server";
+import prismadb from "@/lib/prismadb";
+import {NextApiRequest} from "next";
 
 export const dynamic = "force-dynamic";
 
-export async function POST(req) {
+export async function POST(req: NextApiRequest) {
   try {
-    await connectToDB();
-    const { username, password } = await req.json();
+    const { username, password }: {username: string, password: string} = await req.body;
 
-    const checkUser = await User.findOne({ username });
+    const checkUser = await prismadb.user.findUnique({
+      where: { username: username },
+    });
 
     if (!checkUser) {
       return NextResponse.json({

@@ -149,6 +149,7 @@ export default function AdminView() {
     },
   ];
 
+
   async function extractAllDatas() {
     const response = await getData(currentSelectedTab);
 
@@ -179,8 +180,6 @@ export default function AdminView() {
       });
     }
   }
-
-  console.log(allData, 'allData');
 
 
   async function handleSaveData() {
@@ -215,7 +214,6 @@ export default function AdminView() {
     setProjectViewFormData(initialProjectFormData);
   }
 
-  console.log(allData, homeViewFormData, "homeViewFormData");
 
   useEffect(() => {
     setAuthUser(JSON.parse(sessionStorage.getItem("authUser")));
