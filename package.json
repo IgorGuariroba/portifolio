@@ -13,6 +13,8 @@
     "prisma-reset": "npx prisma migrate reset"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
     "@mui/lab": "^5.0.0-alpha.150",
     "@prisma/client": "^5.5.2",
     "bcryptjs": "^2.4.3",

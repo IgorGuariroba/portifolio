@@ -42,9 +42,12 @@ const config: Config = {
         100: "#EEEFF2",
         400: "#AFB5C0",
         500: "#DDDDDD",
+        800: '#2D3748',
+        900: '#1A202C',
       },
     },
-    extend: {},
+    extend: {
+    },
   },
   variants: {
     extend: {

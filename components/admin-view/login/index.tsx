@@ -1,6 +1,7 @@
 "use client";
 
 import FormControls from "../form-controls";
+import Logo from "@/components/logo/logo";
 
 const controls = [
   {
@@ -22,12 +23,7 @@ export default function Login({ formData, setFormData, handleLogin }) {
         <>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                <div className="cursor-pointer flex gap-2 font-bold items-center text-[20px] text-green-main flex justify-center items-center" >
-                    <div className="w-[40px] h-[40px] flex justify-center items-center p-3 rounded-[8px] border-green-main bg-green-main">
-                        <span className="text-[#fff] text-[25px] font-bold">P</span>
-                    </div>
-                    ortfolio
-                </div>
+                <Logo/>
                 <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
                     Faça login na sua conta
                 </h2>

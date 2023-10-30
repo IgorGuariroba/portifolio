@@ -9,6 +9,22 @@ import Login from "@/components/admin-view/login";
 import AdminProjectView from "@/components/admin-view/project";
 import { addData, getData, login, updateData } from "@/app/services";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import {MenuMobile} from "@/components/menu-mobile/menu-mobile";
+import Logo from "@/components/logo/logo";
+import aiImage from "@/public/assets/ai-image.png";
+import {
+  AcademicCapIcon, ArrowRightOnRectangleIcon,
+  BeakerIcon,
+  HomeIcon,
+  InformationCircleIcon,
+  PhoneIcon,
+  ServerStackIcon
+} from "@heroicons/react/24/outline";
+import {FcAbout} from "react-icons/fc";
+import {MdCastForEducation, MdScience} from "react-icons/md";
+import {AiFillProject} from "react-icons/ai";
+import {GrContactInfo} from "react-icons/gr";
 
 const initialHomeFormData = {
   heading: "",
@@ -81,10 +97,11 @@ export default function AdminView() {
           handleSaveData={handleSaveData}
         />
       ),
+      icon: HomeIcon
     },
     {
       id: "about",
-      label: "About",
+      label: "Sobre",
       component: (
         <AdminAboutView
           formData={aboutViewFormData}
@@ -92,10 +109,11 @@ export default function AdminView() {
           handleSaveData={handleSaveData}
         />
       ),
+      icon: InformationCircleIcon
     },
     {
       id: "experience",
-      label: "Experience",
+      label: "Experiência",
       component: (
         <AdminExperienceView
           formData={experienceViewFormData}
@@ -104,10 +122,11 @@ export default function AdminView() {
           data={allData?.experience}
         />
       ),
+      icon: BeakerIcon
     },
     {
       id: "education",
-      label: "Education",
+      label: "Educação",
       component: (
         <AdminEducationView
           formData={educationViewFormData}
@@ -116,10 +135,11 @@ export default function AdminView() {
           data={allData?.education}
         />
       ),
+      icon: AcademicCapIcon
     },
     {
       id: "project",
-      label: "Project",
+      label: "Projeto",
       component: (
         <AdminProjectView
           formData={projectViewFormData}
@@ -128,13 +148,15 @@ export default function AdminView() {
           data={allData?.project}
         />
       ),
+      icon: ServerStackIcon
     },
     {
       id: "contact",
-      label: "Contact",
+      label: "Contato",
       component: <AdminContactView
       data={allData && allData?.contact}
       />,
+      icon: PhoneIcon
     },
   ];
 
@@ -228,37 +250,68 @@ export default function AdminView() {
     );
 
   return (
-    <div className="border-b border-gray-200">
-      <nav className="-mb-0.5 flex justify-center spcae-x-6" role="tablist">
-        {menuItems.map((item) => (
-          <button
-            key={item.id}
-            type="button"
-            className="p-4 font-bold text-xl text-black"
-            onClick={() => {
-              setCurrentSelectedTab(item.id);
-              resetFormDatas();
-              setUpdate(false);
-            }}
-          >
-            {item.label}
-          </button>
-        ))}
-        <button
-          onClick={() => {
-            setAuthUser(false);
-            sessionStorage.removeItem("authUser");
-          }}
-          className="p-4 font-bold text-xl text-black"
-        >
-          Logout
-        </button>
-      </nav>
-      <div className="mt-10 p-10">
-        {menuItems.map(
-          (item) => item.id === currentSelectedTab && item.component
-        )}
+      <div>
+        <MenuMobile/>
+        <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+          <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6">
+            <div className="flex h-16 shrink-0 items-center">
+              <Logo/>
+            </div>
+              <nav className="flex flex-1 flex-col">
+                <ul role="list" className="flex flex-1 flex-col gap-y-7">
+                  <li>
+                    <ul role="list" className="-mx-2 space-y-3">
+                        {menuItems.map((item) => (
+                            <li>
+                                <a
+                                    key={item.id}
+                                    type="button"
+                                    className="text-orange-100 group flex gap-x-3 rounded-md p-3 text-sm  leading-6 font-semibold hover:bg-gray-800"
+                                    onClick={() => {
+                                      setCurrentSelectedTab(item.id);
+                                      resetFormDatas();
+                                      setUpdate(false);
+                                    }}
+                                >
+                                  <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
+                                  {item.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                  </li>
+                  <li className="-mx-6 mt-auto">
+                    <a href="#" className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-gray-800">
+                      <Image
+                          className="h-8 w-8 rounded-full bg-gray-800" 
+                          src={aiImage} 
+                          alt="Imagem do usuario"
+                          width={50}
+                          height={50}
+                      />
+                        <span className="sr-only">Sua Foto</span>
+                        <span aria-hidden="true" className="text-white-300">Igor Guariroba</span>
+                    </a>
+                    <button
+                        onClick={() => {
+                          setAuthUser(false);
+                          sessionStorage.removeItem("authUser");
+                        }}>
+                      <ArrowRightOnRectangleIcon className="text-white-300 h-6 w-6 shrink-0"/>
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+          </div>
+        </div>
+        <main className="py-10 lg:pl-72">
+          <div className="px-4 sm:px-6 lg:px-8">
+            {menuItems.map(
+                (item) => item.id === currentSelectedTab && item.component
+            )}
+          </div>
+        </main>
       </div>
-    </div>
+        
   );
 }
