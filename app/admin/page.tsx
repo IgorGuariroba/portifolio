@@ -265,8 +265,7 @@ export default function AdminView() {
                             <li>
                                 <a
                                     key={item.id}
-                                    type="button"
-                                    className="text-orange-100 group flex gap-x-3 rounded-md p-3 text-sm  leading-6 font-semibold hover:bg-gray-800"
+                                    className={`text-orange-100 group flex gap-x-3 rounded-md p-3 text-sm leading-6 font-semibold hover:bg-gray-800 ${item.id === currentSelectedTab ? 'bg-gray-800' : ''}`}
                                     onClick={() => {
                                       setCurrentSelectedTab(item.id);
                                       resetFormDatas();
@@ -280,8 +279,8 @@ export default function AdminView() {
                         ))}
                     </ul>
                   </li>
-                  <li className="-mx-6 mt-auto">
-                    <a href="#" className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-gray-800">
+                  <li className="-mx-6 mt-auto gap-x-2 items-center flex py-2 px-1">
+                    <a href="#" className="inline-flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-gray-800 rounded-md">
                       <Image
                           className="h-8 w-8 rounded-full bg-gray-800" 
                           src={aiImage} 
@@ -290,15 +289,16 @@ export default function AdminView() {
                           height={50}
                       />
                         <span className="sr-only">Sua Foto</span>
-                        <span aria-hidden="true" className="text-white-300">Igor Guariroba</span>
+                        <span aria-hidden="true" className="text-white-300 text-center">Igor Guariroba</span>
                     </a>
-                    <button
+                    <a
+                        className="hover:bg-gray-800 rounded-md inline-flex px-6 py-3"
                         onClick={() => {
                           setAuthUser(false);
                           sessionStorage.removeItem("authUser");
                         }}>
-                      <ArrowRightOnRectangleIcon className="text-white-300 h-6 w-6 shrink-0"/>
-                    </button>
+                      <ArrowRightOnRectangleIcon className="text-white-300 h-6 w-7 shrink-0"/>
+                    </a>
                   </li>
                 </ul>
               </nav>
