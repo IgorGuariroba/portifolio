@@ -5,15 +5,15 @@ import FormControls from "../form-controls";
 const controls = [
   {
     name: "heading",
-    placeholder: "Enter heading text",
+    placeholder: "Insira o texto do cabeçalho",
     type: "text",
-    label: "Enter heading text",
+    label: "Insira o texto do cabeçalho",
   },
   {
     name: "summary",
-    placeholder: "Enter Career summary",
+    placeholder: "Insira o resumo da carreira",
     type: "text",
-    label: "Enter Career summary",
+    label: "Insira o resumo da carreira",
   },
 ];
 
@@ -27,7 +27,7 @@ export default function AdminHomeView({ formData, setFormData, handleSaveData })
           setFormData={setFormData}
         />
         <button onClick={()=>handleSaveData('home')} className="mt-[10px] border border-green-600 p-4 font-bold text-[16px]">
-          Add Info
+          Adicionar informação
         </button>
       </div>
     </div>
