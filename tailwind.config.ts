@@ -32,9 +32,15 @@ const config: Config = {
       },
       green: {
         500: "#2FAB73",
+        600: "#278D61",
+        700: "#206F50",
+        800: "#19503E",
+        900: "#11322C",
         main : "#0DB760"
       },
       white: {
+        main: "#ffffff",
+        100: "#ffffff",
         300: "#F8F8F8",
         500: "#fff",
       },
