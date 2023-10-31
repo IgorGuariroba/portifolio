@@ -38,12 +38,14 @@ const socialIcons = [
         className="w-[40px] h-[40px] "
       />
     ),
+    uri: 'https://www.facebook.com/igorguarioba'
   },
   {
     id: "twitter",
     icon: (
       <FaTwitter color="rgba(13, 183, 96, 1)" className="w-[40px] h-[40px] " />
     ),
+    uri: 'https://twitter.com/igorguariroba'
   },
   {
     id: "linkedin",
@@ -53,6 +55,7 @@ const socialIcons = [
         className="w-[40px] h-[40px] "
       />
     ),
+    uri: 'https://www.linkedin.com/in/igor-ravel'
   },
   {
     id: "instagram",
@@ -62,6 +65,7 @@ const socialIcons = [
         className="w-[40px] h-[40px] "
       />
     ),
+    uri: 'https://www.instagram.com/igor.guariroba'
   },
 ];
 
@@ -121,7 +125,7 @@ export default function ClientHomeView({data}: ClientHomeViewProps) {
                   whileHover={{ scale: 1.2, rotate: 360 }}
                   whileTap={{ scale: 0.8, rotate: -360, borderRadius: "100%" }}
                 >
-                  {item.icon}
+                  <a href={item.uri} target="_blank">{item.icon}</a>
                 </motion.div>
               ))}
             </motion.div>
