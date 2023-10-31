@@ -63,15 +63,25 @@ export default function AdminHomeView() {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    setData(data => [...data, {
-      heading,
-      summary,
-      id: data[0]?.id
-    }])
+    
+    setData(prevData => {
+      // Clone os dados existentes
+      const newData = [...prevData]
+
+      // Substituir o primeiro item com novos dados
+      newData[0] = {
+        heading,
+        summary,
+        id: prevData[0]?.id
+      }
+
+      // Retorne os dados atualizados
+      return newData
+    })
   }
   
   
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <div className="w-full">
       <button

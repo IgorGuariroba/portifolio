@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import {useEffect, useMemo, useRef} from "react";
 import AnimationWrapper from "../animation-wrapper";
 import { motion } from "framer-motion";
 import {
@@ -76,7 +76,6 @@ interface ClientHomeViewProps {
 export default function ClientHomeView({data}: ClientHomeViewProps) {
   const setVariants = useMemo(() => variants(), []);
   const containerRef = useRef(null);
-
   return (
     <div className="max-w-screen-xl mt-24 px-8 xl:px-16 mx-auto" id="home">
       <AnimationWrapper>
