@@ -1,28 +1,29 @@
 "use client";
 
+import { type } from "os";
 import FormControls from "../form-controls";
 
 const controls = [
   {
-    name: "aboutme",
+    name: "aboutMe",
     placeholder: "About Me",
     type: "text",
     label: "About Me",
   },
   {
-    name: "noofprojects",
+    name: "numberOfProjects",
     placeholder: "No of projects",
     type: "text",
     label: "Enter no of projects",
   },
   {
-    name: "yearofexperience",
+    name: "yearsOfExperience",
     placeholder: "No of experience",
     type: "text",
     label: "Enter no of experience",
   },
   {
-    name: "noofclients",
+    name: "numberOfClients",
     placeholder: "No of clients",
     type: "text",
     label: "Enter no of clients",
@@ -35,7 +36,11 @@ const controls = [
   },
 ];
 
-export default function AdminAboutView({formData, setFormData , handleSaveData}) {
+export default function AdminAboutView({
+  formData,
+  setFormData,
+  handleSaveData,
+}) {
   return (
     <div className="w-full">
       <div className="bg-[#ffffff] shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -44,7 +49,10 @@ export default function AdminAboutView({formData, setFormData , handleSaveData})
           formData={formData}
           setFormData={setFormData}
         />
-        <button onClick={()=> handleSaveData('about')} className="mt-[10px] border border-green-600 p-4 font-bold text-[16px]">
+        <button
+          onClick={() => handleSaveData("about")}
+          className="mt-[10px] border border-green-600 p-4 font-bold text-[16px]"
+        >
           Add Info
         </button>
       </div>

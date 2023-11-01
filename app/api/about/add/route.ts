@@ -6,7 +6,9 @@ export const dynamic = "force-dynamic";
 export async function POST(req: NextRequest) {
   try {
     const extractData = await req.json();
-    const saveData = await prismadb.about.create(extractData);
+    const saveData = await prismadb.about.create({
+      data: extractData,
+    });
 
     if (saveData) {
       return NextResponse.json({

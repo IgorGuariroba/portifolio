@@ -1,30 +1,19 @@
-import connectToDB from "@/database";
-import About from "@/models/About";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
+import prismadb from "@/lib/prismadb";
 
 export const dynamic = "force-dynamic";
 
-export async function PUT(req) {
+export async function PUT(req: NextRequest) {
   try {
-    await connectToDB();
-
     const extractData = await req.json();
-    const {
-      _id,
-      aboutme,
-      noofprojects,
-      yearofexperience,
-      nooflclients,
-      skills,
-    } = extractData;
+    const { id } = extractData;
 
-    const updateData = await About.findOneAndUpdate(
-      {
-        _id: _id,
+    const updateData = await prismadb.about.update({
+      where: {
+        id,
       },
-      { aboutme, noofprojects, yearofexperience, nooflclients, skills },
-      { new: true }
-    );
+      data: extractData,
+    });
 
     if (updateData) {
       return NextResponse.json({

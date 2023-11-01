@@ -6,6 +6,7 @@ import ClientContactView from "@/components/client-view/contact";
 import Cta from "@/components/cta/cta";
 import Footer from "@/components/footer/footer";
 import Contato from "@/components/contato/contato";
+import Faqs from "@/components/faqs/faqs";
 
 interface PropsDatas {
   currentSection: string;
@@ -49,6 +50,7 @@ export default async function Home() {
       />
       <ClientProjectView data={projectSectionData} />
       {/* <ClientContactView/> */}
+      <Faqs />
       <Contato />
       <Footer />
     </div>

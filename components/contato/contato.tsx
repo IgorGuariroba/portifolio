@@ -50,7 +50,7 @@ export default function Contato() {
   return (
     <div className="relative isolate bg-white-100 px-6 py-24 sm:py-32 lg:px-8">
       <svg
-        className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+        className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(90%_90%_at_top_right,white,transparent)]"
         aria-hidden="true"
       >
         <defs>
