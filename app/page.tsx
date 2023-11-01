@@ -7,6 +7,7 @@ import Cta from "@/components/cta/cta";
 import Footer from "@/components/footer/footer";
 import Contato from "@/components/contato/contato";
 import Faqs from "@/components/faqs/faqs";
+import Banners from "@/components/banners/banners";
 
 interface PropsDatas {
   currentSection: string;

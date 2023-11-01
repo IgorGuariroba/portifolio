@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Link as LinkScroll, scroller } from "react-scroll";
+import Banners from "@/components/banners/banners";
 
 const menuItems = [
   {
@@ -32,7 +33,11 @@ type CreateMenusProps = {
   setActiveLink: (id: string) => void;
 };
 
-function CreateMenus({ activeLink, getMenuItems, setActiveLink }: CreateMenusProps) {
+function CreateMenus({
+  activeLink,
+  getMenuItems,
+  setActiveLink,
+}: CreateMenusProps) {
   return getMenuItems.map((item) => (
     <LinkScroll
       activeClass="active"
@@ -71,6 +76,7 @@ export default function Navbar() {
           scrollActive ? "shadow-md pt-0" : "pt-4"
         }`}
       >
+        <Banners />
         <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
           <div className="col-start-1 col-end-2 flex items-center">
             <div className="cursor-pointer flex gap-2 font-bold items-center text-[20px] text-green-main">
