@@ -3,6 +3,8 @@ import ClientAboutView from "@/components/client-view/about";
 import ClientExperienceAndEducationView from "@/components/client-view/experience";
 import ClientProjectView from "@/components/client-view/project";
 import ClientContactView from "@/components/client-view/contact";
+import Cta from "@/components/cta/cta";
+import Footer from "@/components/footer/footer";
 
 interface PropsDatas {
     currentSection: string
@@ -33,12 +35,14 @@ export default async function Home() {
                     aboutSectionData && aboutSectionData.length ? aboutSectionData[0] : []
                 }
             />
+            <Cta/>
             <ClientExperienceAndEducationView
                 educationData={educationSectionData}
                 experienceData={experienceSectionData}
             />
             <ClientProjectView data={projectSectionData}/>
             <ClientContactView/>
+            <Footer/>
         </div>
     )
 }

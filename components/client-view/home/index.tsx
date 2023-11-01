@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useMemo, useRef} from "react";
+import { useMemo, useRef} from "react";
 import AnimationWrapper from "../animation-wrapper";
 import { motion } from "framer-motion";
 import {
