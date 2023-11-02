@@ -1,10 +1,10 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     boxShadow: {
@@ -16,13 +16,13 @@ const config: Config = {
       xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       t: "0 -1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
       orange: "0px 20px 20px -15px rgba(245,56,56,0.81) ",
-      "green-md" : "0px 20px 40px -15px rgba(13, 183, 96, 0.81)",
+      "green-md": "0px 20px 40px -15px rgba(13, 183, 96, 0.81)",
       none: "none",
     },
     colors: {
       transparent: "transparent",
       black: {
-        900 : "#000000",
+        900: "#000000",
         500: "#4F5665",
         600: "#0B132A",
       },
@@ -40,7 +40,7 @@ const config: Config = {
         700: "#206F50",
         800: "#19503E",
         900: "#11322C",
-        main : "#0DB760"
+        main: "#0DB760",
       },
       white: {
         main: "#ffffff",
@@ -49,17 +49,17 @@ const config: Config = {
         500: "#fff",
       },
       gray: {
+        50: "#F9FAFB",
         100: "#EEEFF2",
         200: "#CACFD2",
         300: "#A6AAB2",
         400: "#AFB5C0",
         500: "#DDDDDD",
-        800: '#2D3748',
-        900: '#1A202C',
+        800: "#2D3748",
+        900: "#1A202C",
       },
     },
-    extend: {
-    },
+    extend: {},
   },
   variants: {
     extend: {
@@ -67,5 +67,5 @@ const config: Config = {
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
