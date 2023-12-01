@@ -90,7 +90,7 @@ export default function Contato() {
           <form action="#" method="POST" className="lg:flex-auto">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               {controls.map((control) => (
-                <div>
+                <div key={control.name}>
                   <div>
                     <label
                       htmlFor="first-name"

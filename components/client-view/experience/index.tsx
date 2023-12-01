@@ -44,6 +44,7 @@ export default function ClientExperienceAndEducationView({educationData,experien
               <h1 className="leading-[70px] mb-4 text-3xl lg:text-4xl xl:text-5xl font-medium">
                 {"Minha Experiência".split(" ").map((item, index) => (
                   <span
+                    key={index}
                     className={`${
                       index === 1 ? "text-green-main" : "text-[#000]"
                     }`}
@@ -60,7 +61,7 @@ export default function ClientExperienceAndEducationView({educationData,experien
                 <Timeline position="right">
                   {experienceData && experienceData.length
                     ? experienceData.map((experienceItem) => (
-                        <TimelineItem>
+                        <TimelineItem key={experienceItem.company}>
                           <TimelineSeparator>
                             <TimelineDot className="bg-green-main" />
                             <TimelineConnector className="bg-green-main" />
@@ -96,6 +97,7 @@ export default function ClientExperienceAndEducationView({educationData,experien
               <h1 className="leading-[70px] mb-4 text-3xl lg:text-4xl xl:text-5xl font-medium">
                 {"Minha Formação".split(" ").map((item, index) => (
                   <span
+                      key={index}
                     className={`${
                       index === 1 ? "text-green-main" : "text-[#000]"
                     }`}
@@ -112,7 +114,7 @@ export default function ClientExperienceAndEducationView({educationData,experien
                 <Timeline position="right">
                   {educationData && educationData.length
                     ? educationData.map((educationItem) => (
-                        <TimelineItem>
+                        <TimelineItem key={educationItem.year}>
                           <TimelineSeparator>
                             <TimelineDot className="bg-green-main" />
                             <TimelineConnector className="bg-green-main" />

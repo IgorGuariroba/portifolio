@@ -8,6 +8,7 @@ import Footer from "@/components/footer/footer";
 import Contato from "@/components/contato/contato";
 import Faqs from "@/components/faqs/faqs";
 import Banners from "@/components/banners/banners";
+import Projects from "@/components/project/project";
 
 interface PropsDatas {
   currentSection: string;
@@ -49,6 +50,7 @@ export default async function Home() {
         educationData={educationSectionData}
         experienceData={experienceSectionData}
       />
+        {/*<Projects/>*/}
       <ClientProjectView data={projectSectionData} />
       {/* <ClientContactView/> */}
       <Faqs />

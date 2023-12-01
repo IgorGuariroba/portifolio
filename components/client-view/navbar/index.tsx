@@ -40,6 +40,7 @@ function CreateMenus({
 }: CreateMenusProps) {
   return getMenuItems.map((item) => (
     <LinkScroll
+      key={item.id}
       activeClass="active"
       to={item.id}
       spy={true}

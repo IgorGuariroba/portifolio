@@ -31,6 +31,7 @@ export default function ClientProjectView({ data }: ClientProjectViewProps) {
           <h1 className="leading-[70px] mb-4 text-3xl lg:text-4xl xl:text-5xl font-medium">
             {"Meus Projetos".split(" ").map((item, index) => (
               <span
+                  key={index}
                 className={`${index === 1 ? "text-green-main" : "text-[#000]"}`}
               >
                 {item}{" "}
