@@ -140,7 +140,6 @@ export default function ClientHomeView({data}: ClientHomeViewProps) {
               <Image
                 src={aiImage}
                 alt="Foto Profissional"
-                layout="responsive"
                 quality={100}
                 height={300}
                 width={300}
