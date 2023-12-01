@@ -1,6 +1,6 @@
 "use client";
 import Logo from "../logo/logo";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import iaImage from "@/public/assets/ai-image.png";
 import { useState } from "react";
 

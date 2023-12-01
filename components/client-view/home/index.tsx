@@ -9,7 +9,7 @@ import {
   FaInstagram,
   FaTwitter,
 } from "react-icons/fa";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import aiImage from "@/public/assets/ai-image.png";
 
 function variants() {

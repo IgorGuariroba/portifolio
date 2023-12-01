@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import AnimationWrapper from "../animation-wrapper";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import aboutMeImage from "@/public/assets/about-image.png";
 import LogoClouds from "@/components/logo-clouds/logo-clouds";
 

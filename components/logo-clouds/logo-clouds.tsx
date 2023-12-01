@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 export default function LogoClouds() {
   return (
     <div className="py-24 sm:py-32">

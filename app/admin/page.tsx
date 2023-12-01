@@ -9,7 +9,7 @@ import Login from "@/components/admin-view/login";
 import AdminProjectView from "@/components/admin-view/project";
 import { addData, getData, login, updateData } from "@/app/services";
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { MenuMobile } from "@/components/menu-mobile/menu-mobile";
 import Logo from "@/components/logo/logo";
 import aiImage from "@/public/assets/ai-image.png";

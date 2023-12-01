@@ -2,7 +2,7 @@ import {Fragment, useRef} from 'react'
 import {Dialog, Menu, Transition} from '@headlessui/react'
 import {XMarkIcon} from '@heroicons/react/24/outline'
 import {EllipsisVerticalIcon} from '@heroicons/react/20/solid'
-import Image from "next/image";
+import Image from "next/legacy/image";
 import aiImage from "@/public/assets/ai-image.png";
 
 
