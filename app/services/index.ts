@@ -17,7 +17,7 @@ export async function addData(currentTab: PropsCurrenTab, formData: PropsFormDat
 
     return await response.json();
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 }
 
@@ -31,7 +31,7 @@ export async function getData(currentTab: PropsCurrenTab) {
 
     return result;
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 }
 
@@ -49,7 +49,7 @@ export async function updateData(currentTab: PropsCurrenTab, formData: PropsForm
 
     return result;
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 }
 
@@ -67,6 +67,6 @@ export async function login(formData: PropsFormData) {
 
     return result;
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 }

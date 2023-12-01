@@ -27,7 +27,7 @@ export async function PUT(req: NextRequest) {
       });
     }
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return NextResponse.json({
       success: false,
       message: "Something went wrong !Please try again",

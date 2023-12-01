@@ -17,7 +17,7 @@ export async function GET() {
       });
     }
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return NextResponse.json({
       success: false,
       message: "Something went wrong !Please try again",

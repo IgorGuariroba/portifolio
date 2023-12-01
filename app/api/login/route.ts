@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
       message: "Login successfull",
     });
   } catch (e) {
-    console.log('Erro desconhecido',e);
+    // console.log('Erro desconhecido',e);
 
     return NextResponse.json({
       success: false,

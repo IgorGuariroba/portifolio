@@ -49,7 +49,7 @@ export default function ClientContactView() {
 
     async function handleSendMessage() {
         const res = await addData({currentTab: "contact"}, {formData: formData});
-        console.log(res, 'contact-res');
+        // console.log(res, 'contact-res');
 
         if (res && res.success) {
             setFormData(initialFormData)

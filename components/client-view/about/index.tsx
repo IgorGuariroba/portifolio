@@ -45,8 +45,8 @@ interface PropsData {
 }
 export default function ClientAboutView({ data }: PropsData) {
   const setVariants = useMemo(() => variants(), []);
-  console.log("numero de clientes", data?.numberOfProjects);
-  console.log("numero de clientes", data);
+  // console.log("numero de clientes", data?.numberOfProjects);
+  // console.log("numero de clientes", data);
 
   const aboutDataInfo = [
     {
