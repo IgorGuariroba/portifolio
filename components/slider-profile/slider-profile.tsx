@@ -1,7 +1,7 @@
-import {Fragment, useRef, useState} from 'react'
-import { Dialog, Menu, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
-import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
+import {Fragment, useRef} from 'react'
+import {Dialog, Menu, Transition} from '@headlessui/react'
+import {XMarkIcon} from '@heroicons/react/24/outline'
+import {EllipsisVerticalIcon} from '@heroicons/react/20/solid'
 import Image from "next/image";
 import aiImage from "@/public/assets/ai-image.png";
 
@@ -14,6 +14,7 @@ interface DataType {
     heading?: string;
     summary?: string;
 }
+
 interface PropsSliderProfile {
     open: boolean,
     setOpen: (open: boolean) => void,
@@ -21,13 +22,18 @@ interface PropsSliderProfile {
     onAlterar: (heading: string, summary: string) => void
 }
 
-export default function SliderProfile({ open = true, setOpen, data, onAlterar }: PropsSliderProfile) {
+export default function SliderProfile({
+                                          open = true,
+                                          setOpen,
+                                          data,
+                                          onAlterar
+                                      }: PropsSliderProfile) {
     const headingRef = useRef<HTMLTextAreaElement | null>(null);
     const summaryRef = useRef<HTMLTextAreaElement | null>(null);
     return (
         <Transition.Root show={open} as={Fragment}>
             <Dialog as="div" className="relative z-10" onClose={() => setOpen(false)}>
-                <div className="fixed inset-0" />
+                <div className="fixed inset-0"/>
 
                 <div className="fixed inset-0 overflow-hidden">
                     <div className="absolute inset-0 overflow-hidden">
@@ -45,16 +51,18 @@ export default function SliderProfile({ open = true, setOpen, data, onAlterar }:
                                     <div className="flex h-full flex-col overflow-y-scroll bg-white-100 shadow-xl py-2">
                                         <div className="px-4 py-6 sm:px-6">
                                             <div className="flex items-start justify-between">
-                                                <Dialog.Title className="text-base font-semibold leading-6 text-gray-900 ">Editar Home</Dialog.Title>
+                                                <Dialog.Title
+                                                    className="text-base font-semibold leading-6 text-gray-900 ">Editar
+                                                    Home</Dialog.Title>
                                                 <div className="ml-3 flex h-7 items-center">
                                                     <button
                                                         type="button"
                                                         className="relative rounded-md bg-white-100 text-gray-400 hover:text-gray-500 focus:ring-2 focus:ring-green-500"
                                                         onClick={() => setOpen(false)}
                                                     >
-                                                        <span className="absolute -inset-2.5" />
+                                                        <span className="absolute -inset-2.5"/>
                                                         <span className="sr-only">Close panel</span>
-                                                        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                                                        <XMarkIcon className="h-6 w-6" aria-hidden="true"/>
                                                     </button>
                                                 </div>
                                             </div>
@@ -62,15 +70,19 @@ export default function SliderProfile({ open = true, setOpen, data, onAlterar }:
                                         {/* Main */}
                                         <div className="divide-y divide-gray-100 ">
                                             <div className="pb-6">
-                                                <div className="h-24 bg-green-500 sm:h-20 lg:h-28" />
-                                                <div className="-mt-12 flow-root px-4 sm:-mt-8 sm:flex sm:items-end sm:px-6 lg:-mt-16">
+                                                <div className="h-24 bg-green-500 sm:h-20 lg:h-28"/>
+                                                <div
+                                                    className="-mt-12 flow-root px-4 sm:-mt-8 sm:flex sm:items-end sm:px-6 lg:-mt-16">
                                                     <div>
                                                         <div className="-m-1 flex">
-                                                            <div className="inline-flex overflow-hidden rounded-lg border-4 border-white-100">
+                                                            <div
+                                                                className="inline-flex overflow-hidden rounded-lg border-4 border-white-100">
                                                                 <Image
                                                                     className="h-24 w-24 flex-shrink-0 sm:h-40 sm:w-40 lg:h-48 lg:w-48"
                                                                     src={aiImage}
                                                                     alt=""
+                                                                    width={150}
+                                                                    height={150}
                                                                 />
                                                             </div>
                                                         </div>
@@ -78,14 +90,17 @@ export default function SliderProfile({ open = true, setOpen, data, onAlterar }:
                                                     <div className="mt-6 sm:ml-6 sm:flex-1">
                                                         <div>
                                                             <div className="flex items-center">
-                                                                <h3 className="text-xl font-bold text-gray-900 sm:text-2xl">Igor Guariroba</h3>
-                                                                <span className="ml-2.5 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-green-400">
+                                                                <h3 className="text-xl font-bold text-gray-900 sm:text-2xl">Igor
+                                                                    Guariroba</h3>
+                                                                <span
+                                                                    className="ml-2.5 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-green-400">
                                   <span className="sr-only">Online</span>
                                 </span>
                                                             </div>
                                                             <p className="text-sm text-gray-400">@Igor Guariroba</p>
                                                         </div>
-                                                        <div className="mt-5 flex flex-wrap space-y-3 sm:space-x-3 sm:space-y-0">
+                                                        <div
+                                                            className="mt-5 flex flex-wrap space-y-3 sm:space-x-3 sm:space-y-0">
                                                             <button
                                                                 onClick={() => onAlterar(headingRef.current?.value || '', summaryRef.current?.value || '')}
                                                                 type="button"
@@ -101,11 +116,15 @@ export default function SliderProfile({ open = true, setOpen, data, onAlterar }:
                                                                 Cancelar
                                                             </button>
                                                             <div className="ml-3 inline-flex sm:ml-0">
-                                                                <Menu as="div" className="relative inline-block text-left">
-                                                                    <Menu.Button className="relative inline-flex items-center rounded-md bg-white-100 p-2 text-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                                                                        <span className="absolute -inset-1" />
-                                                                        <span className="sr-only">Open options menu</span>
-                                                                        <EllipsisVerticalIcon className="h-5 w-5" aria-hidden="true" />
+                                                                <Menu as="div"
+                                                                      className="relative inline-block text-left">
+                                                                    <Menu.Button
+                                                                        className="relative inline-flex items-center rounded-md bg-white-100 p-2 text-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                                                                        <span className="absolute -inset-1"/>
+                                                                        <span
+                                                                            className="sr-only">Open options menu</span>
+                                                                        <EllipsisVerticalIcon className="h-5 w-5"
+                                                                                              aria-hidden="true"/>
                                                                     </Menu.Button>
                                                                     <Transition
                                                                         as={Fragment}
@@ -116,10 +135,11 @@ export default function SliderProfile({ open = true, setOpen, data, onAlterar }:
                                                                         leaveFrom="transform opacity-100 scale-100"
                                                                         leaveTo="transform opacity-0 scale-95"
                                                                     >
-                                                                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                                        <Menu.Items
+                                                                            className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                                                             <div className="py-1">
                                                                                 <Menu.Item>
-                                                                                    {({ active }) => (
+                                                                                    {({active}) => (
                                                                                         <a
                                                                                             href="#"
                                                                                             className={classNames(
@@ -132,7 +152,7 @@ export default function SliderProfile({ open = true, setOpen, data, onAlterar }:
                                                                                     )}
                                                                                 </Menu.Item>
                                                                                 <Menu.Item>
-                                                                                    {({ active }) => (
+                                                                                    {({active}) => (
                                                                                         <a
                                                                                             href="#"
                                                                                             className={classNames(
